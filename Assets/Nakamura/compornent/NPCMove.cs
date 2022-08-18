@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public  class tracBese : MonoBehaviour
+public  class NPCMove : MonoBehaviour
 {
     /// <summary>NPC‚ªˆÚ“®‚Å‚«‚é‚© /// </summary>
     [Header("ˆÚ“®‰Â”\‚©”Û‚©"), SerializeField] public bool _isMove = true;
