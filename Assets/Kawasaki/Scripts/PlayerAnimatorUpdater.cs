@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// アニメーションの種類
+/// プレイヤーアニメーションの種類
 /// </summary>
 public enum PlayerAnimationType
 {
@@ -61,15 +61,15 @@ public class PlayerAnimatorUpdater : AnimatorUpdater
     public void UpdateParameters(Vector2 direction, bool isScaring)
     {
         PlayerAnimationType type = PlayerAnimationType.Down;
-        if (direction == Vector2.up)
+        if (direction.y > 0.0f)
         {
             type = PlayerAnimationType.Up;
         }
-        else if (direction == Vector2.right)
+        else if (direction.x > 0.0f)
         {
             type = PlayerAnimationType.Right;
         }
-        else if (direction == Vector2.left)
+        else if (direction.x < 0.0f)
         {
             type = PlayerAnimationType.Left;
         }
