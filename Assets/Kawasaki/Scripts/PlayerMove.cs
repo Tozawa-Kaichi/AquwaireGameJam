@@ -27,7 +27,7 @@ public class PlayerMove : MonoBehaviour
     /// 速度
     /// </summary>
     [SerializeField]
-    float _speed = 0.0f;
+    float _moveSpeed = 12.0f;
 
     private void Awake()
     {
@@ -56,11 +56,8 @@ public class PlayerMove : MonoBehaviour
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        _direction = new(horizontal, vertical);
 
-        Vector2 velocity = _speed * Time.deltaTime * _direction;
-
-        _rigidbody2D.velocity = velocity;
+        _rigidbody2D.velocity = _moveSpeed * new Vector2(horizontal, vertical).normalized;
     }
 
     /// <summary>
