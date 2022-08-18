@@ -5,9 +5,19 @@ using UnityEngine;
 /// <summary>
 /// 周囲を怖がらせるオブジェクト
 /// </summary>
+[RequireComponent(typeof(AudioSource))]
 public class Scaring : MonoBehaviour
 {
+    /// <summary>
+    /// コライダー2D
+    /// </summary>
     Collider2D _collider2D = null;
+
+    /// <summary>
+    /// オーディオソース
+    /// </summary>
+    [SerializeField]
+    AudioSource _audioSource = null;
 
     /// <summary>
     /// 怖がらせる行動の有効時間
@@ -49,7 +59,13 @@ public class Scaring : MonoBehaviour
     /// </summary>
     private void StartScaring()
     {
+        // 残り時間設定
         _remainingScaringTime = _scaringTime;
+
+        // 効果音再生
+        //_audioSource.PlayOneShot(_audioSource.clip, _audioSource.volume);
+        
+        // コライダー有効化
         _collider2D.enabled = true;
 
         Debug.Log("Start Scaring");
@@ -60,6 +76,7 @@ public class Scaring : MonoBehaviour
     /// </summary>
     private void EndScaring()
     {
+        // コライダー無効化
         _collider2D.enabled = false;
 
         Debug.Log("End Scaring");
@@ -69,7 +86,7 @@ public class Scaring : MonoBehaviour
     /// 怖がらせる行動の最中である
     /// </summary>
     /// <returns></returns>
-    private bool IsScaring()
+    public bool IsScaring()
     {
         return _remainingScaringTime > 0.0f;
     }

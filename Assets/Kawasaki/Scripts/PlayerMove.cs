@@ -14,6 +14,16 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D _rigidbody2D = null;
 
     /// <summary>
+    /// 向き
+    /// </summary>
+    Vector2 _direction = Vector2.down;
+
+    /// <summary>
+    /// 最後に入力した移動方向
+    /// </summary>
+    public Vector2 LastInputMoveDirection { get; private set; } = Vector2.zero;
+
+    /// <summary>
     /// 速度
     /// </summary>
     [SerializeField]
@@ -27,6 +37,11 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         Move();
+
+        if (_direction != Vector2.zero)
+        {
+            LastInputMoveDirection = _direction;
+        }
     }
 
     /// <summary>
@@ -41,8 +56,9 @@ public class PlayerMove : MonoBehaviour
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        Vector2 direction = new(horizontal, vertical);
-        Vector2 velocity = _speed * Time.deltaTime * direction;
+        _direction = new(horizontal, vertical);
+
+        Vector2 velocity = _speed * Time.deltaTime * _direction;
 
         _rigidbody2D.velocity = velocity;
     }
