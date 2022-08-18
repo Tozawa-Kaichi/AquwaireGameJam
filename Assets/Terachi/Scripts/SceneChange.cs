@@ -35,4 +35,10 @@ public class SceneChange : MonoBehaviour
         gameExplain.SetActive(false);
 
     }
+
+    public void GoTitle()
+    {
+        //SceneManager.LoadScene("Title");
+        Debug.Log("ƒ^ƒCƒgƒ‹‰Ÿ‚³‚ê‚½");
+    }
 }
