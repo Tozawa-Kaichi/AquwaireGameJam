@@ -9,13 +9,9 @@ public enum PlayerAnimationType
 {
     Down = 0,
     Up = 1,
-    Right = 2,
-    Left = 3,
 
     ScaringDown = 100,
-    ScaringUp = 101,
-    ScaringRight = 102,
-    ScaringLeft = 103
+    ScaringUp = 101
 }
 
 /// <summary>
@@ -65,13 +61,15 @@ public class PlayerAnimatorUpdater : AnimatorUpdater
         {
             type = PlayerAnimationType.Up;
         }
-        else if (direction.x > 0.0f)
+
+        
+        if (direction.x > 0.0f)
         {
-            type = PlayerAnimationType.Right;
+            _spriteRenderer.flipX = true;
         }
         else if (direction.x < 0.0f)
         {
-            type = PlayerAnimationType.Left;
+            _spriteRenderer.flipX = false;
         }
 
         if (isScaring)
