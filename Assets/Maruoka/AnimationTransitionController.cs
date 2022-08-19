@@ -28,29 +28,63 @@ public class AnimationTransitionController : MonoBehaviour
         _animator.SetBool(_animParam_MoveRight, false);
         _animator.SetBool(_animParam_MoveLeft, false);
 
+        bool isRight;
+        bool isUp;
+
         if (_rigidbody2D.velocity == Vector2.zero)
         {
             _animator.SetBool(_animParam_idle, true);
         }
-        //上を判定する
-        else if (_rigidbody2D.velocity.y > 0)
+        else
         {
-            _animator.SetBool(_animParam_MoveUp, true);
-        }
-        //下を判定する
-        else if (_rigidbody2D.velocity.y < 0)
-        {
-            _animator.SetBool(_animParam_MoveDown, true);
-        }
-        //右を判定する
-        else if (_rigidbody2D.velocity.x > 0)
-        {
-            _animator.SetBool(_animParam_MoveRight, true);
-        }
-        // 左を判定する
-        else　if(_rigidbody2D.velocity.x < 0)
-        {
-            _animator.SetBool(_animParam_MoveLeft, true);
+            //左右を判定
+            if (_rigidbody2D.velocity.x > 0f)
+            {
+                isRight = true;
+            }
+            else
+            {
+                isRight = false;
+            }
+            //上下を判定
+            if (_rigidbody2D.velocity.y > 0f)
+            {
+                isUp = true;
+            }
+            else
+            {
+                isUp = false;
+            }
+
+            //どっちの成分が大きいか判定しパラメータを変更する
+            //x成分が大きい場合 左右も切り返る
+            if (_rigidbody2D.velocity.x > _rigidbody2D.velocity.y)
+            {
+                if (isRight)
+                {
+                    Vector3 s = transform.localScale;
+                    if (s.x < 0) s.x *= -1;
+                    _animator.SetBool(_animParam_MoveRight, true);
+                }
+                else
+                {
+                    Vector3 s = transform.localScale;
+                    if (s.x > 0) s.x *= -1;
+                    _animator.SetBool(_animParam_MoveLeft, true);
+                }
+            }
+            //y成分が大きい場合
+            else
+            {
+                if (isUp)
+                {
+                    _animator.SetBool(_animParam_MoveUp, true);
+                }
+                else
+                {
+                    _animator.SetBool(_animParam_MoveDown, true);
+                }
+            }
         }
     }
 }
