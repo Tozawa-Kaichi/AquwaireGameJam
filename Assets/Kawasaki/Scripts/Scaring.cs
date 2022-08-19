@@ -11,7 +11,7 @@ public class Scaring : MonoBehaviour
     /// <summary>
     /// コライダー2D
     /// </summary>
-    Collider2D _collider2D = null;
+    CircleCollider2D _collider2D = null;
 
     /// <summary>
     /// オーディオソース
@@ -37,7 +37,7 @@ public class Scaring : MonoBehaviour
 
     private void Awake()
     {
-        _collider2D = GetComponent<Collider2D>();
+        _collider2D = GetComponent<CircleCollider2D>();
     }
 
     private void Update()

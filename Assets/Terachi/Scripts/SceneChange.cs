@@ -9,11 +9,9 @@ public class SceneChange : MonoBehaviour
    public  GameObject gameExplain;
 
 
-    public void GoPlayScene()
+    public void ChangeScene(string sceneName)
     {
-        //SceneManager.LoadScene("");
-        Debug.Log("playScene�Ă΂ꂽ");
-
+        SceneManager.LoadScene(sceneName);
     }
 
     public void QuitGame()
