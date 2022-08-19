@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 周囲を怖がらせるオブジェクト
+/// お化け
 /// </summary>
 [RequireComponent(typeof(AudioSource))]
 public class Scaring : MonoBehaviour
@@ -30,6 +30,11 @@ public class Scaring : MonoBehaviour
     /// </summary>
     float _remainingScaringTime = 0.0f;
 
+    /// <summary>
+    /// 子供を招いている
+    /// </summary>
+    public bool IsInviting { get; private set; } = false;
+
     private void Awake()
     {
         _collider2D = GetComponent<Collider2D>();
@@ -51,6 +56,10 @@ public class Scaring : MonoBehaviour
             {
                 StartScaring();
             }
+            else
+            {
+                IsInviting = Input.GetButton("Fire1");
+            }
         }
     }
 
@@ -61,6 +70,9 @@ public class Scaring : MonoBehaviour
     {
         // 残り時間設定
         _remainingScaringTime = _scaringTime;
+
+        // 招きフラグOFF
+        IsInviting = false;
 
         // 効果音再生
         //_audioSource.PlayOneShot(_audioSource.clip, _audioSource.volume);
