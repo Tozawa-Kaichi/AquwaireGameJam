@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9cc90572c00aa774e9b752c96b9f1f49
+guid: 88883dc0fad5f6f4ab778d5a9df3fdaf
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -119,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Square_0
+      name: Square
       rect:
         serializedVersion: 2
         x: 0
@@ -133,8 +133,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f360b92ede9c3964fb5bb6cef69ae819
-      internalID: 1925223626
+      spriteID: 2d009a6b596c7d760800000000000000
+      internalID: 7482667652216324306
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Square_0: 1925223626
+      Square: 7482667652216324306
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

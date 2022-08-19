@@ -34,15 +34,16 @@ public  class NPCMove : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        _isMove = false;
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    _isMove = false;
+    //}
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        _isMove = true;
-    }
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    _isMove = true;
+    //}
+
     public void ChangeFollowObject(Transform newFllowObject)
     {
         _followObject = newFllowObject;
