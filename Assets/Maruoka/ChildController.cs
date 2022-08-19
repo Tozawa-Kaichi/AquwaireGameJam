@@ -6,10 +6,11 @@ using UnityEngine;
 public class ChildController : MonoBehaviour
 {
     /// <summary> 連れ去られているかどうか </summary>
-    bool _isBeTakenAway = false;
+    public bool _isBeTakenAway = false;
     Transform _adultPos;
     [Header("大人オブジェクトのタグ"), SerializeField] string _adultTagName = "Adult";
     [Header("ゴーストのトランスフォーム"), SerializeField] Transform _ghost;
+    [Header("入口のトランスフォーム"), SerializeField] Transform _entrancePos;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class ChildController : MonoBehaviour
         else
         {
             GetComponent<NPCMove>()._isMove = true;
-            GetComponent<NPCMove>().ChangeFollowObject(_adultPos);
+            GetComponent<NPCMove>().ChangeFollowObject(_entrancePos);
         }
 
         if (_adultPos != null && _adultPos.gameObject.GetComponent<AdultController>().GetChanged_isSurprised())

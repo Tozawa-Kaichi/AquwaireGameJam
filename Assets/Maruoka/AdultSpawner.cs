@@ -15,6 +15,7 @@ public class AdultSpawner : MonoBehaviour
 
     void Start()
     {
+        SetInterval();
         StartCoroutine(WaitInterval());
     }
 
@@ -42,6 +43,6 @@ public class AdultSpawner : MonoBehaviour
 
         yield return new WaitForSeconds(_interval);
 
-        _iaSpawn = false;
+        _iaSpawn = true;
     }
 }

@@ -25,6 +25,8 @@ public class AdultController : MonoBehaviour
     {
         _entrancePos = GameObject.FindGameObjectWithTag(_entranceTagName).transform;
         _childPos = GameObject.FindGameObjectWithTag(_childTagName).transform;
+
+        GetComponent<NPCMove>().ChangeFollowObject(_childPos);
     }
 
     void Update()

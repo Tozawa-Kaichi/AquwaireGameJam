@@ -6,7 +6,7 @@ using UnityEngine;
 public class AnimationTransitionController : MonoBehaviour
 {
     Rigidbody2D _rigidbody2D;
-    Animator _animator;
+    protected Animator _animator;
 
     [Header("アニメーションパラメータの名前 : アイドル"), SerializeField] string _animParam_idle = "IsIdele";
     [Header("アニメーションパラメータの名前 : 右へ移動しているか"), SerializeField] string _animParam_MoveRight = "IsMoveRight";
@@ -14,13 +14,13 @@ public class AnimationTransitionController : MonoBehaviour
     [Header("アニメーションパラメータの名前 : 上へ移動しているか"), SerializeField] string _animParam_MoveUp = "IsMoveUp";
     [Header("アニメーションパラメータの名前 : 下へ移動しているか"), SerializeField] string _animParam_MoveDown = "IsMoveDown";
 
-    void Start()
+    protected virtual void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         _animator.SetBool(_animParam_idle, false);
         _animator.SetBool(_animParam_MoveUp, false);
