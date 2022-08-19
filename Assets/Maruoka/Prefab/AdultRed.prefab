@@ -14,8 +14,10 @@ GameObject:
   - component: {fileID: 2683626363145610917}
   - component: {fileID: 2683626363145610922}
   - component: {fileID: 2683626363145610913}
+  - component: {fileID: 671230715743332573}
+  - component: {fileID: 13804062}
   m_Layer: 0
-  m_Name: Adult
+  m_Name: AdultRed
   m_TagString: Adult
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -167,3 +169,40 @@ MonoBehaviour:
   _isMove: 1
   _moveSpeed: 5
   _followObject: {fileID: 0}
+--- !u!114 &671230715743332573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2683626363145610923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15a7f28f5c97884c9577f6ec7fc0864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animParam_idle: IsIdle
+  _animParam_MoveBeside: IsMoveBeside
+  _animParam_MoveUp: IsMoveUp
+  _animParam_MoveDown: IsMoveDown
+  _animParamName_AnimSpeed: AnimSpeed
+--- !u!95 &13804062
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2683626363145610923}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 044cb37070726b04fbd52a1d926cf024, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
