@@ -11,7 +11,7 @@ public class ChildController : MonoBehaviour
     [Header("大人オブジェクトのタグ"), SerializeField] string _adultTagName = "Adult";
     [Header("ゴーストのトランスフォーム"), SerializeField] Transform _ghost;
     [Header("入口のトランスフォーム"), SerializeField] Transform _entrancePos;
-
+    [SerializeField] GameObject _beatUI;
     void Start()
     {
         //_adultPos = GameObject.FindGameObjectWithTag(_adultTagName).transform;
@@ -24,10 +24,14 @@ public class ChildController : MonoBehaviour
         {
             GetComponent<NPCMove>().ChangeFollowObject(_ghost);
             GetComponent<NPCMove>()._isMove = Input.GetButton("Fire1");
+            _beatUI.SetActive(false);
+            BgmManager.RestVolume();
         }
         //連れ去られる時の処理
         else
         {
+            _beatUI.SetActive(true);
+            BgmManager.SetVolume(0.1f);
             GetComponent<NPCMove>()._isMove = true;
             GetComponent<NPCMove>().ChangeFollowObject(_entrancePos);
         }
