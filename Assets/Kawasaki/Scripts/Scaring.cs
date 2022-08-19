@@ -75,7 +75,7 @@ public class Scaring : MonoBehaviour
         IsInviting = false;
 
         // 効果音再生
-        //_audioSource.PlayOneShot(_audioSource.clip, _audioSource.volume);
+        _audioSource.PlayOneShot(_audioSource.clip, _audioSource.volume);
         
         // コライダー有効化
         _collider2D.enabled = true;
