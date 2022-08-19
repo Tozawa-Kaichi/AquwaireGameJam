@@ -113,7 +113,6 @@ public class AnimationTransitionController : MonoBehaviour
 
     protected void SetAnimParamAllFalse()
     {
-        _animator.SetBool(_animParam_idle, false);
         _animator.SetBool(_animParam_MoveUp, false);
         _animator.SetBool(_animParam_MoveDown, false);
         _animator.SetBool(_animParam_MoveBeside, false);

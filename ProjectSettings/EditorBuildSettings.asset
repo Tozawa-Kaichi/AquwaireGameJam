@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/merge/Title.unity
     guid: bc0402d5f95c5ae4a90a499017a49925
   - enabled: 1
+    path: Assets/merge/Stage1.unity
+    guid: 2850663d2f989ec46a35175aee4e88b8
+  - enabled: 1
     path: Assets/merge/GameClear.unity
     guid: 958c35ee5b105dc4289c932af0d9af9f
   - enabled: 1
